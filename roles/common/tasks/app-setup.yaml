@@ -1,0 +1,26 @@
+- name: Add roboshop system user
+  ansible.builtin.user:
+    name: roboshop
+    shell: /sbin/nologin
+    comment: roboshop system user
+    system: true
+    home: /app
+
+- name:  create app directory
+  ansible.builtin.file:
+    path: /app
+    state: directory
+
+- name: download the {{ component }} code 
+  ansible.builtin.get_url:
+    url: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}-v3.zip
+    dest: /tmp/{{ component }}.zip
+
+
+# remote_src: yes means files already exists in catalogue server
+
+- name: extract the {{ component }} code
+  ansible.builtin.unarchive:
+    src: /tmp/{{ component }}.zip
+    dest: /app
+    remote_src: yes
