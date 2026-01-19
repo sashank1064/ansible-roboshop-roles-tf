@@ -3,6 +3,11 @@
       name: "{{ item }}"
       state: installed
     loop:
+    - openssl
+    - openssl-libs
+    - openssh
+    - openssh-server
+    - openssh-clients
     - python3 
     - gcc 
     - python3-devel
