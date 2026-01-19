@@ -13,7 +13,7 @@
     name: all
     login_user: "{{ MYSQL_ROOT_USER }}"
     login_password: "{{ MYSQL_ROOT_PASSWORD }}"
-    login_host: "{{MYSQL_HOST}}"
+    login_host: "{{ MYSQL_HOST }}"
     state: import
     target: "{{ item }}"
   loop:
