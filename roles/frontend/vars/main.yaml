@@ -1,4 +1,4 @@
-CATALOGUE_HOST: catalogue.backend-{{ env }}.daws84s.pro
+CATALOGUE_HOST: catalogue.backend-{{ env }}.daws84s.pro  #Host header, like sub-domains
 USER_HOST: user.backend-{{ env }}.daws84s.pro
 CART_HOST: cart.backend-{{ env }}.daws84s.pro
 SHIPPING_HOST: shipping.backend-{{ env }}.daws84s.pro
