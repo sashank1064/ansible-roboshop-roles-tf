@@ -1,20 +1,14 @@
+- name: app setup
+  include_role:
+    name: common
+    tasks_from: app-setup
 
+- name: python setup
+  include_role:
+    name: common
+    tasks_from: python
 
-  - name: Application user setup
-    include_role:
-      name: common
-      tasks_from: app-setup
-
-  - name: systemd setup
-    include_role: 
-      name: common
-      tasks_from: systemd
-
-  - name: python
-    include_role:
-      name: common
-      tasks_from: python
-
- 
-
-  
+- name: systemd setup
+  include_role:
+    name: common
+    tasks_from: systemd
